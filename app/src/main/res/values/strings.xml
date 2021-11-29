@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">Final Kotlin V1 2021</string>
+    <string name="user">User</string>
+    <string name="pass">Pass</string>
+    <string name="login">Login</string>
+    <string name="marca">Marca</string>
+    <string name="tipo_de_equipo">Tipo De Equipo</string>
+    <string name="seleccione_un_producto">Seleccione un producto</string>
+    <string name="modelo">Modelo</string>
+    <string name="precio">Precio</string>
+    <string name="enviar">Enviar</string>
+    <string name="salir">Salir</string>
+    <string name="otro">Otro</string>
+    <string name="exit">exit</string>
+    <string name="todo">TODO</string>
+</resources>
