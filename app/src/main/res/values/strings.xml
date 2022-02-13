@@ -13,4 +13,12 @@
     <string name="otro">Otro</string>
     <string name="exit">exit</string>
     <string name="todo">TODO</string>
+    <string name="Volver">volver</string>
+    <string-array name="languages">
+        <item>C</item>
+        <item>C++</item>
+        <item>Java</item>
+        <item>JavaScript</item>
+        <item>VisualBasic</item>
+    </string-array>
 </resources>

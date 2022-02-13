@@ -3,11 +3,12 @@ package com.example.finalkotlinv12021
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.*
-
+import android.os.SystemClock
+import android.widget.Button
+import android.widget.EditText
+import android.widget.Toast
 
 class Productos : AppCompatActivity() {
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_productos)
@@ -23,19 +24,22 @@ class Productos : AppCompatActivity() {
         }
     }
 
+
     private fun equipoTest(tipo: EditText, marca: EditText, modelo: EditText, precio: EditText) {
         val eqTipo = tipo.text.toString()
         val eqMarca = marca.text.toString()
         val eqModelo = modelo.text.toString()
         val eqPrecio = precio.text.toString()
         val eqDeposito = Equipo(eqTipo, eqMarca, eqModelo, eqPrecio)
-        Toast.makeText(this, "Equipo cargado con exito", Toast.LENGTH_LONG).show()
+
 
         if (eqTipo.isEmpty() || eqMarca.isEmpty() || eqModelo.isEmpty() || eqPrecio.isEmpty()) {
             Toast.makeText(this, "Complete los campos", Toast.LENGTH_SHORT).show()
         } else {
+            Toast.makeText(this, "Equipo cargado con exito", Toast.LENGTH_LONG).show()
             val intent = Intent(this, ListaEquipos::class.java)
             intent.putExtra("Equipo", eqDeposito)
+            SystemClock.sleep(1000)
             startActivity(intent)
             finish()
         }
@@ -44,7 +48,4 @@ class Productos : AppCompatActivity() {
 
 
 
-
-
-
-}
+    }

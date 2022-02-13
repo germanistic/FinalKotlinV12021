@@ -1,6 +1,7 @@
 package com.example.finalkotlinv12021
 
 import android.app.PendingIntent.getActivity
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
@@ -15,15 +16,20 @@ class Imagenes : AppCompatActivity() {
         //Boton salir
         val btnSalirApp= findViewById<Button>(R.id.btnSalirApp)
 
+        //Boton Inicio
+        //val btnInicio = findViewById<Button>(R.id.btnInicio)
+
         btnSalirApp.setOnClickListener{
             Toast.makeText(this, "Saliendo de la aplicación", Toast.LENGTH_SHORT).show()
             finishAffinity ()
         }
 
-
+        //btnInicio.setOnClickListener{
+          //  Toast.makeText(this, "Inicio", Toast.LENGTH_SHORT).show()
+            //val intent = Intent(this, Productos:: class.java)
+            //startActivity(intent)
+        //}
     }
-
     private fun onBackPressed(function: () -> Unit) {
-
     }
 }

@@ -10,9 +10,17 @@ class ListaEquipos : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_lista_equipos)
 
+
+        val bundle=intent.extras
+        val objeto=bundle?.getString("ingreso")
+        var ingreso: TextView=findViewById(R.id.txtIngreso)
+
+        ingreso.text="Bienvenido ¡${objeto}!."
+
         val btnExit = findViewById<Button>(R.id.btnExit)
         val btnOtro = findViewById<Button>(R.id.btnOtro)
         val btnDetalles = findViewById<Button>(R.id.btnDetalles)
+
         val tipoVista = findViewById<TextView>(R.id.tvTipoVista)
         val marcaVista = findViewById<TextView>(R.id.tvMarcaVista)
         val modeloVista = findViewById<TextView>(R.id.tvModeloVista)
@@ -41,8 +49,6 @@ class ListaEquipos : AppCompatActivity() {
             Toast.makeText(this, "Detalles", Toast.LENGTH_SHORT).show()
             val intent = Intent(this, Detalles:: class.java)
             startActivity(intent)
-
         }
-
     }
 }

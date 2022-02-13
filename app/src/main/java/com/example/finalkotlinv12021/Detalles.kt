@@ -19,6 +19,7 @@ class Detalles : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_detalles)
 
+
         //Boton salir
         val btnSalirDetalles = findViewById<Button>(R.id.btnSalirDetalles)
 

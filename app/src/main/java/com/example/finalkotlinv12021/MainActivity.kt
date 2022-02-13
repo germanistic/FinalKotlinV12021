@@ -22,7 +22,7 @@ class MainActivity : AppCompatActivity() {
         val passLogin = findViewById<EditText>(R.id.ediPass)
         val btnLogin = findViewById<Button>(R.id.btnLogin)
 
-        //Boton de login con las comprobaciones de los campos y envia los datos a la otra activity mediante Bundel e Intent.
+        //Boton de login con las comprobaciones de los campos y envia los datos a la otra activity mediante Bundle e Intent.
 
         btnLogin.setOnClickListener{
             val user = userLogin.text.toString()
@@ -31,7 +31,7 @@ class MainActivity : AppCompatActivity() {
 
             if(userLogin.text.toString() == login.usuario && passLogin.text.toString() == login.pass)
             {
-                Toast.makeText(applicationContext,"Bienvenido al Sistema",Toast.LENGTH_SHORT).show()
+                Toast.makeText(applicationContext,"Bienvenido señor ${user}",Toast.LENGTH_SHORT).show()
 
                 val main = Bundle()
                 main.putString("Login", logeo.usuario)
@@ -44,7 +44,5 @@ class MainActivity : AppCompatActivity() {
                 Toast.makeText(applicationContext, "Error de usuario/contraseña",Toast.LENGTH_SHORT).show()
             }
         }
-
-
     }
 }
