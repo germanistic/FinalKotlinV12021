@@ -11,12 +11,6 @@ class ListaEquipos : AppCompatActivity() {
         setContentView(R.layout.activity_lista_equipos)
 
 
-        val bundle=intent.extras
-        val objeto=bundle?.getString("ingreso")
-        var ingreso: TextView=findViewById(R.id.txtIngreso)
-
-        ingreso.text="Bienvenido ¡${objeto}!."
-
         val btnExit = findViewById<Button>(R.id.btnExit)
         val btnOtro = findViewById<Button>(R.id.btnOtro)
         val btnDetalles = findViewById<Button>(R.id.btnDetalles)
@@ -34,8 +28,11 @@ class ListaEquipos : AppCompatActivity() {
         precioVista.text= equipo?.Precio.toString()
 
         btnExit.setOnClickListener{
+            //Toast.makeText(this, "Saliendo de la aplicación", Toast.LENGTH_SHORT).show()
+            //this.finish()
             Toast.makeText(this, "Saliendo de la aplicación", Toast.LENGTH_SHORT).show()
-            this.finish()
+            val intent = Intent(this, Salir:: class.java)
+            startActivity(intent)
         }
 
         btnOtro.setOnClickListener{

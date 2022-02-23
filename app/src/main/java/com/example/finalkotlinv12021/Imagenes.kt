@@ -16,19 +16,11 @@ class Imagenes : AppCompatActivity() {
         //Boton salir
         val btnSalirApp= findViewById<Button>(R.id.btnSalirApp)
 
-        //Boton Inicio
-        //val btnInicio = findViewById<Button>(R.id.btnInicio)
-
         btnSalirApp.setOnClickListener{
             Toast.makeText(this, "Saliendo de la aplicación", Toast.LENGTH_SHORT).show()
-            finishAffinity ()
+            val intent = Intent(this, Salir:: class.java)
+            startActivity(intent)
         }
-
-        //btnInicio.setOnClickListener{
-          //  Toast.makeText(this, "Inicio", Toast.LENGTH_SHORT).show()
-            //val intent = Intent(this, Productos:: class.java)
-            //startActivity(intent)
-        //}
     }
     private fun onBackPressed(function: () -> Unit) {
     }

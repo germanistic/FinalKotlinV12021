@@ -1,16 +1,18 @@
 package com.example.finalkotlinv12021
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.text.method.ScrollingMovementMethod
 import android.widget.Button
 import android.widget.TextView
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
+
 
 lateinit var service :ApiService
 
@@ -24,16 +26,18 @@ class Detalles : AppCompatActivity() {
         val btnSalirDetalles = findViewById<Button>(R.id.btnSalirDetalles)
 
         btnSalirDetalles.setOnClickListener{
+
             Toast.makeText(this, "Saliendo de la aplicación", Toast.LENGTH_SHORT).show()
-            finishAffinity ()
+            val intent = Intent(this, Salir:: class.java)
+            startActivity(intent)
         }
 
-        //Boton Volver
+        //Boton Volver a cargar otro Producto
         val btnVolverDetalles = findViewById<Button>(R.id.btnVolverDetalles)
 
         btnVolverDetalles.setOnClickListener{
             Toast.makeText(this, "Cargando Otro Equipo", Toast.LENGTH_SHORT).show()
-            val intent = Intent(this, ListaEquipos:: class.java)
+            val intent = Intent(this, Productos:: class.java)
             startActivity(intent)
         }
         //Boton imagenes
@@ -56,6 +60,7 @@ class Detalles : AppCompatActivity() {
 
     private fun getAllPosts(){
         val tvDatosApi = findViewById<TextView>(R.id.tvDatosApi)
+        tvDatosApi.movementMethod = ScrollingMovementMethod()
 
         //Recibimos todos los posts
 
@@ -64,10 +69,10 @@ class Detalles : AppCompatActivity() {
                 val postList:List<Post>? = response.body()
                 if(postList !=null){
                     for (listapost in postList.indices){
-                        tvDatosApi.append("UserID ${postList[listapost].userId}"+
-                                "ID ${postList[listapost].id}"+
-                                "TITLE ${postList[listapost].title}"+
-                                "BODY ${postList[listapost].body}"
+                        tvDatosApi.append("UserID ${postList[listapost].userId}\n"+
+                                "ID ${postList[listapost].id}\n"+
+                                "TITLE ${postList[listapost].title}\n"+
+                                "BODY ${postList[listapost].body}\n\n"
                         )
                     }
                 }

@@ -6,12 +6,19 @@ import android.os.Bundle
 import android.os.SystemClock
 import android.widget.Button
 import android.widget.EditText
+import android.widget.TextView
 import android.widget.Toast
 
 class Productos : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_productos)
+
+        val bundle=intent.extras
+        val objeto=bundle?.getString("Login")
+        var ingreso: TextView =findViewById(R.id.txtIngreso)
+
+        ingreso.text="Usuario:  ${objeto}"
 
         val btnEnviar: Button = findViewById(R.id.btnEnviar)
         val tipo: EditText = findViewById(R.id.tvTipo)
